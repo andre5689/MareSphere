@@ -176,7 +176,7 @@ main {
 .footer {
   display: flex;
   flex-wrap: wrap;
-  background: linear-gradient(to bottom, #f5fcff 1%, #3b3b79 99%);
+  background: #3b3b79;
   color: rgb(41, 13, 165);
   justify-content: space-between;
   padding: 20px;
