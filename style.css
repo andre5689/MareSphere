@@ -199,4 +199,15 @@ main {
     margin-bottom: 10px;
   }
 }
-
+@media screen and (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    background: none;
+    box-shadow: none;
+    min-width: unset;
+  }
+  .hamburger {
+    display: none;
+  }
+}
