@@ -3,11 +3,8 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
 body {
+  display: grid;
   min-height: 100vh;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -97,122 +94,45 @@ main {
 
 /* Navigation Styles */
 .navbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
+  position: relative; 
   background: #4a38b4;
   padding: 0.5em 1em;
-  display: flex;
+  display: flex; 
   justify-content: flex-end;
   align-items: center;
-  height: 60px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* Hamburger Icon */
 .hamburger {
-  color: #fff;
+  color: #000; /* Better contrast */
   font-size: 2em;
   cursor: pointer;
-  z-index: 1100;
-  display: block;
-  background: none;
-  border: none;
-  outline: none;
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  z-index: 10;
+  position: relative;
 }
 
-.hamburger:active,
-.hamburger:focus {
-  outline: none;
-}
-
-/* Dropdown Menu (Mobile) */
 .nav-menu {
   display: none;
-  flex-direction: column;
   position: absolute;
-  top: 60px; /* height of navbar */
-  right: 10px;
+  top: 100%;
+  right: 0;
   background: #9582eb;
   list-style: none;
   margin: 0;
   padding: 0;
   min-width: 180px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-  z-index: 1050;
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-  max-height: 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 100; /* Make sure this is higher than hamburger */
 }
-
-.nav-menu.open {
-  display: flex;
-  max-height: 500px;
-  transition: max-height 0.3s ease;
-}
-
-.nav-menu li {
-  width: 100%;
-}
-
 .nav-menu li a {
   display: block;
   color: #fff;
   padding: 1em;
   text-decoration: none;
-  width: 100%;
-  transition: background 0.2s;
-}
-
-.nav-menu li a:hover,
-.nav-menu li a:focus {
+  }
+  
+  .nav-menu li a:hover {
   background: #444;
-}
-
-/* Desktop Navigation */
-@media screen and (min-width: 769px) {
-  .navbar {
-    position: static;
-    justify-content: flex-end;
-    height: auto;
-    box-shadow: none;
   }
-  .hamburger {
-    display: none;
-  }
-  .nav-menu {
-    display: flex !important;
-    flex-direction: row;
-    position: static;
-    background: none;
-    box-shadow: none;
-    min-width: unset;
-    max-height: none;
-    overflow: visible;
-    border-radius: 0;
-    align-items: center;
-    height: auto;
-  }
-  .nav-menu.open {
-    max-height: none;
-  }
-  .nav-menu li a {
-    color: #fff;
-    padding: 1em 1.5em;
-    background: none;
-  }
-  .nav-menu li a:hover,
-  .nav-menu li a:focus {
-    background: #231892;
-  }
-}
-
 /* Footer Styles */
 .footer {
   display: flex;
@@ -222,7 +142,6 @@ main {
   justify-content: space-between;
   padding: 20px;
   opacity: 0.9;
-  margin-top: 40px;
 }
 
 .footer-left,
@@ -234,15 +153,13 @@ main {
 
 .footer ul {
   list-style: none;
-  padding: 0;
 }
 
 .footer ul li a {
   color: #000;
-  text-decoration: none;
 }
 
-/* Responsive Main and Header Adjustments */
+/* Media Queries */
 @media screen and (max-width: 768px) {
   main {
     grid-template-columns: 1fr;
@@ -250,31 +167,36 @@ main {
 
   .anchor, .text-container {
     grid-column: 1 / -1;
-    margin: 20px 0;
-    padding: 20px 10px;
   }
 
   .anchor {
-    max-width: 60%;
+    max-width: 50%;
     margin: 0 auto;
-    height: 250px;
   }
+}
 
+@media screen and (max-width: 600px) {
   .header-container {
     height: 200px;
   }
+  
+  .logo-container {
+    padding: 10px 0;
+  }
+  
+  .banner-nav {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .banner-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .banner-nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
 
-/* Extra Small Screens */
-@media screen and (max-width: 600px) {
-  .header-container {
-    height: 120px;
-  }
-  .logo {
-    max-width: 140px;
-  }
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
