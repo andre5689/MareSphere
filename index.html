@@ -61,21 +61,25 @@ With a deep understanding of the shipping industry's demands, we offer efficient
  <script>
 function toggleMenu() {
   var menu = document.getElementById('nav-menu');
-  menu.classList.toggle('open');
+  if (menu) {
+    menu.classList.toggle('open');
+  }
 }
 
 // Optional: Close menu when clicking outside (for mobile)
-window.onclick = function(event) {
+window.addEventListener('click', function(event) {
   var menu = document.getElementById('nav-menu');
   var hamburger = document.querySelector('.hamburger');
   if (
+    menu &&
     menu.classList.contains('open') &&
     !event.target.closest('.hamburger') &&
     !event.target.closest('.nav-menu')
   ) {
     menu.classList.remove('open');
   }
-};
-</script>    
+});
+</script>
+
 </body>
 </html>
