@@ -100,16 +100,19 @@ main {
   display: flex; 
   justify-content: flex-end;
   align-items: center;
+  z-index: 1000;
 }
 
 .hamburger {
-  color: #000; /* Better contrast */
+  color: #000;
   font-size: 2em;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1010;
   position: relative;
+  display: block; /* Always visible */
 }
 
+/* Dropdown Menu: hidden by default, shown with .open */
 .nav-menu {
   display: none;
   position: absolute;
@@ -121,18 +124,26 @@ main {
   padding: 0;
   min-width: 180px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 100; /* Make sure this is higher than hamburger */
+  z-index: 100;
+  border-radius: 0 0 8px 8px;
+  transition: opacity 0.3s;
 }
+
+.nav-menu.open {
+  display: block;
+}
+
 .nav-menu li a {
   display: block;
   color: #fff;
   padding: 1em;
   text-decoration: none;
-  }
-  
-  .nav-menu li a:hover {
+}
+
+.nav-menu li a:hover {
   background: #444;
-  }
+}
+
 /* Footer Styles */
 .footer {
   display: flex;
@@ -159,44 +170,38 @@ main {
   color: #000;
 }
 
-/* Media Queries */
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   main {
     grid-template-columns: 1fr;
   }
-
   .anchor, .text-container {
     grid-column: 1 / -1;
   }
-
   .anchor {
     max-width: 50%;
     margin: 0 auto;
   }
+  /* The nav-menu dropdown will already overlay content, so no changes needed */
 }
 
 @media screen and (max-width: 600px) {
   .header-container {
     height: 200px;
   }
-  
   .logo-container {
     padding: 10px 0;
   }
-  
   .banner-nav {
     width: 100%;
     text-align: center;
   }
-  
   .banner-nav ul {
     flex-direction: column;
     align-items: center;
   }
-  
   .banner-nav li {
     margin-right: 0;
     margin-bottom: 10px;
   }
 }
-
