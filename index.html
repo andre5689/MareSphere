@@ -8,25 +8,24 @@
 </head>
 <body>
   <div class="header-container">
-  <div class="banner">
-    <img src="https://andre5689.github.io/MareSphere/Logo_No_Background.png" alt="Marisphere Logo" class="logo">
-  </div>
-  
-  <nav class="nav-menu">
-    <div class="hamburger" id="hamburger-menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- Nav menu ABOVE the banner/logo -->
+    <nav class="nav-menu">
+      <div class="hamburger" id="hamburger-menu" aria-label="Open navigation" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="banner">
+      <img src="https://andre5689.github.io/MareSphere/Logo_No_Background.png" alt="Marisphere Logo" class="logo">
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="about-me.html">About Me</a></li>
-      <li><a href="Services.html">Services</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</div>
-
+  </div>
 
   <main>
     <img src='https://andre5689.github.io/MareSphere/Anchor_No_Background.png' alt='Anchor' class='anchor'>
@@ -35,14 +34,13 @@
       <p><strong>Your reliable partner in the maritime industry.</strong></p>
       <p>We combine expertise, innovation, and a strong network to offer you tailored solutions. Whether it's advisory support, the organization of specialized services and solutions, or the coordination of complex processes – all the way to providing suitable units for your maritime requirements – we are your central point of contact.
 With a deep understanding of the shipping industry's demands, we offer efficient, transparent, and goal-oriented support. Let’s navigate new paths together and drive your maritime projects to success.</p>
-
-       <p><strong>MareSphere – your anchor in the maritime economy.</strong></p>
+      <p><strong>MareSphere – your anchor in the maritime economy.</strong></p>
     </div>
-
   </main>  
+
   <footer class="footer">
     <div class="footer-left">
-      <p>MareSphere<br>Inh. Finn Burhard<br>Schwanenweg 4<br>18184 Roggentin</p>
+      <p>MareSphere<br>Inh. Finn Burchard<br>Schwanenweg 4<br>18184 Roggentin</p>
     </div>
     <div class="footer-center">
       <ul>
@@ -60,5 +58,18 @@ With a deep understanding of the shipping industry's demands, we offer efficient
     </div>
     <p>CopyRight by Andre Hassler</p>
   </footer>
+
+  <!-- Hamburger menu toggle script -->
+  <script>
+    document.getElementById('hamburger-menu').onclick = function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    };
+    // Optional: Allow keyboard activation for accessibility
+    document.getElementById('hamburger-menu').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        document.getElementById('nav-links').classList.toggle('active');
+      }
+    });
+  </script>
 </body>
 </html>
