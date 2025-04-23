@@ -4,28 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marisphere</title>
-  <link href="style.css" type="text/css" rel="stylesheet">
+  <link href="resources/style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="header-container">
-    <!-- Nav menu ABOVE the banner/logo -->
-    <nav class="nav-menu">
-      <div class="hamburger" id="hamburger-menu" aria-label="Open navigation" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="about-me.html">About Me</a></li>
-        <li><a href="Services.html">Services</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="banner">
-      <img src="https://andre5689.github.io/MareSphere/Logo_No_Background.png" alt="Marisphere Logo" class="logo">
+  <nav class="navbar">
+    <div class="hamburger"  onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
     </div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="about-me.html">About Me</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-container">
+  <div class="banner">
+    <img src="https://andre5689.github.io/MareSphere/Logo_No_Background.png" alt="Marisphere Logo" class="logo">
   </div>
+
+</div>
 
   <main>
     <img src='https://andre5689.github.io/MareSphere/Anchor_No_Background.png' alt='Anchor' class='anchor'>
@@ -34,10 +33,11 @@
       <p><strong>Your reliable partner in the maritime industry.</strong></p>
       <p>We combine expertise, innovation, and a strong network to offer you tailored solutions. Whether it's advisory support, the organization of specialized services and solutions, or the coordination of complex processes – all the way to providing suitable units for your maritime requirements – we are your central point of contact.
 With a deep understanding of the shipping industry's demands, we offer efficient, transparent, and goal-oriented support. Let’s navigate new paths together and drive your maritime projects to success.</p>
-      <p><strong>MareSphere – your anchor in the maritime economy.</strong></p>
-    </div>
-  </main>  
 
+       <p><strong>MareSphere – your anchor in the maritime economy.</strong></p>
+    </div>
+
+  </main>  
   <footer class="footer">
     <div class="footer-left">
       <p>MareSphere<br>Inh. Finn Burchard<br>Schwanenweg 4<br>18184 Roggentin</p>
@@ -56,20 +56,29 @@ With a deep understanding of the shipping industry's demands, we offer efficient
         <li><a href="Impressum.html">Impressum</a></li>
       </ul>
     </div>
-    <p>CopyRight by Andre Hassler</p>
+    <p>© CopyRight by Andre Hassler</p>
   </footer>
-
-  <!-- Hamburger menu toggle script -->
   <script>
-    document.getElementById('hamburger-menu').onclick = function() {
-      document.getElementById('nav-links').classList.toggle('active');
-    };
-    // Optional: Allow keyboard activation for accessibility
-    document.getElementById('hamburger-menu').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        document.getElementById('nav-links').classList.toggle('active');
+    function toggleMenu() {
+      var menu = document.getElementById('nav-menu');
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
       }
-    });
-  </script>
+    }
+    
+    // Optional: Close menu when clicking outside
+    window.onclick = function(event) {
+      var menu = document.getElementById('nav-menu');
+      var hamburger = document.querySelector('.hamburger');
+      if (menu && menu.style.display === 'block' &&
+          !event.target.closest('.hamburger') &&
+          !event.target.closest('.nav-menu')) {
+        menu.style.display = 'none';
+      }
+    }
+    </script>
+    
 </body>
 </html>
