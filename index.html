@@ -59,13 +59,11 @@ With a deep understanding of the shipping industry's demands, we offer efficient
     <p>© CopyRight by Andre Hassler</p>
   </footer>
   <script>
-    function toggleMenu() {
-      var menu = document.getElementById('nav-menu');
-      if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'block';
-      }
+   function toggleMenu() {
+  var menu = document.getElementById('nav-menu');
+  menu.classList.toggle('open');
+}
+
     }
     
     // Optional: Close menu when clicking outside
