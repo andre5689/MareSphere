@@ -211,3 +211,20 @@ main {
     display: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .nav-menu.open {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+  }
+  .nav-menu.open {
+    max-height: 500px; /* Adjust as needed */
+  }
+}
+
+
