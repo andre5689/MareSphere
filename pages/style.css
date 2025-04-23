@@ -69,7 +69,7 @@ main {
 .banner {
   position: relative;
   width: 100%;
-  min-height: 200px;
+  min-height: 500px;
   background-image: url('images/skizze_banner.jpg');
   background-size: cover;
   background-position: center;
