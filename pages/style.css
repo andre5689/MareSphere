@@ -124,7 +124,7 @@ main {
   padding: 0.5em 1em;
   display: flex;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
   height: 60px;
 }
 
@@ -185,7 +185,7 @@ body.menu-open::before {
   position: fixed;
   top: 0; left: 5cm; right: 0; bottom: 0;
   background: rgba(0,0,0,0.3);
-  z-index: 1500;
+  z-index: 1000;
   pointer-events: all;
 }
 
