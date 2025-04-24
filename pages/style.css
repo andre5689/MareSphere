@@ -179,22 +179,7 @@ main {
 }
 
 /* Overlay Styles */
-.menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 5cm; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 2500;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  opacity: 0;
-}
 
-.menu-overlay.open {
-  display: block;
-  pointer-events: all;
-  opacity: 1;
-}
 
 /* Footer Styles */
 .footer {
