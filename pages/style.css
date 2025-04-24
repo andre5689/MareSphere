@@ -16,7 +16,7 @@ body {
 
 /* Typography */
 h1, strong, h2, h3 {
-  color: #406473;
+  color: #0B0B45;
 }
 
 h1 {
@@ -165,7 +165,7 @@ main {
 
 .nav-menu li a {
   display: block;
-  color: #406473;
+  color: #0B0B45;
   padding: 1em 2em;
   text-decoration: none;
   font-size: 1.1em;
