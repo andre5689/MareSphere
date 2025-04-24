@@ -15,11 +15,7 @@ body {
 }
 
 /* Typography */
-h1, strong {
-  color: hsla(0, 0%, 0%, 1);
-}
-
-h2, h3 {
+h1, strong, h2, h3 {
   color: hsla(245, 73%, 33%, 1);
 }
 
