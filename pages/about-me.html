@@ -61,5 +61,44 @@
     </div>
     <p>Copyright by Andre Hassler</p>
   </footer>
+   <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    function openMenu() {
+      navMenu.classList.add('open');
+      menuOverlay.classList.add('open');
+      document.body.classList.add('menu-open');
+    }
+
+    function closeMenu() {
+      navMenu.classList.remove('open');
+      menuOverlay.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
+
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // Optional: Close menu when clicking outside (for mobile)
+    window.addEventListener('click', function(event) {
+      if (
+        navMenu.classList.contains('open') &&
+        !event.target.closest('.hamburger') &&
+        !event.target.closest('.nav-menu')
+      ) {
+        closeMenu();
+      }
+    });
+  </script>
 </body>
 </html>
