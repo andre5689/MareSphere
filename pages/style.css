@@ -117,35 +117,84 @@ display: block; /* Always visible */
 }
 
 /* Dropdown Menu: hidden by default, shown with .open */
+/* Off-canvas Side Menu Styles */
+.navbar {
+  position: relative;
+  background: #4a38b4;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  height: 60px;
+}
+
+.hamburger {
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1010;
+  position: relative;
+  display: block;
+}
+
+/* Side menu: hidden by default, slides in from left */
 .nav-menu {
-display: none;
-position: absolute;
-top: 100%;
-right: 0;
-background: #9582eb;
-list-style: none;
-margin: 0;
-padding: 0;
-min-width: 180px;
-box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-z-index: 100;
-border-radius: 0 0 8px 8px;
-transition: opacity 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 5cm; /* ~189px */
+  max-width: 90vw;
+  background: #9582eb;
+  list-style: none;
+  margin: 0;
+  padding: 80px 0 0 0; /* space for hamburger */
+  box-shadow: 2px 0 16px rgba(0,0,0,0.2);
+  z-index: 2000;
+  border-radius: 0 8px 8px 0;
+  transform: translateX(-110%);
+  transition: transform 0.3s cubic-bezier(.77,0,.18,1);
+  display: block;
 }
 
 .nav-menu.open {
-display: block;
+  transform: translateX(0);
+}
+
+.nav-menu li {
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu li a {
-display: block;
-color: #fff;
-padding: 1em;
-text-decoration: none;
+  display: block;
+  color: #fff;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background 0.2s;
 }
 
 .nav-menu li a:hover {
-background: #444;
+  background: #444;
+}
+
+/* Optional: dim background when menu is open */
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1500;
+  pointer-events: all;
+}
+
+/* Responsive: keep menu width reasonable */
+@media (max-width: 400px) {
+  .nav-menu {
+    width: 90vw;
+    min-width: unset;
+  }
 }
 
 /* Footer Styles */
