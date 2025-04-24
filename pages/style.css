@@ -73,6 +73,7 @@ h2, h3 {
   width: 100%;
   max-width: 600px;
   text-align: center;
+  object-position: bottom;
 }
 
 .logo {
