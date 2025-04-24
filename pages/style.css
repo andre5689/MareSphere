@@ -183,7 +183,7 @@ main {
 .footer {
   display: flex;
   flex-wrap: wrap;
-  background: hsla(65, 73%, 33%, 1);
+  background: #A3B7BF;
   color: rgb(0, 0, 0);
   justify-content: space-between;
   padding: 20px;
