@@ -152,7 +152,7 @@ main {
   transform: translateX(-110%);
   transition: transform 0.3s cubic-bezier(.77,0,.18,1);
   display: block;
-  color: hsla(245, 73%, 33%, 1);
+  color: #406473;
 }
 
 .nav-menu.open {
@@ -185,7 +185,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   background: #A3B7BF;
-  color: rgb(0, 0, 0);
+  color: #F2E6D8;
   justify-content: space-between;
   padding: 20px;
   opacity: 0.9;
