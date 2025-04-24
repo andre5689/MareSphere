@@ -11,7 +11,7 @@ body {
   padding: 0;
   line-height: 1.6;
   color: #333;
-  background-color: #F2E6D8;
+  background-color: #fff;
 }
 
 /* Typography */
@@ -126,7 +126,7 @@ main {
 }
 
 .hamburger {
-  color: #fff;
+  color: #F2E6D8;
   font-size: 2em;
   cursor: pointer;
   z-index: 2010;
