@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MareSphere</title>
-  <link href="https://andre5689.github.io/MareSphere/pages/style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" type="image/jpg" href="/images/MarisSphere_Logo.jpg">
 </head>
 <body>
   <nav class="navbar">
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger">
       <i class="fa fa-bars"></i>
     </div>
     <ul class="nav-menu" id="nav-menu">
@@ -20,6 +20,8 @@
       <li><a href="Contact.html">Contact</a></li>
     </ul>
   </nav>
+  <!-- Overlay for menu -->
+  <div class="menu-overlay" id="menu-overlay"></div>
 
   <div class="header-container">
     <div class="banner">
@@ -64,29 +66,43 @@
     <p>© CopyRight by Andre Hassler</p>
   </footer>
   <script>
-    function toggleMenu() {
-  var menu = document.getElementById('nav-menu');
-  if (menu) {
-    menu.classList.toggle('open');
-    document.body.classList.toggle('menu-open', menu.classList.contains('open'));
-  }
-}
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
 
-// Optional: Close menu when clicking outside (for mobile)
-window.addEventListener('click', function(event) {
-  var menu = document.getElementById('nav-menu');
-  var hamburger = document.querySelector('.hamburger');
-  if (
-    menu &&
-    menu.classList.contains('open') &&
-    !event.target.closest('.hamburger') &&
-    !event.target.closest('.nav-menu')
-  ) {
-    menu.classList.remove('open');
-    document.body.classList.remove('menu-open');
-  }
-});
+    function openMenu() {
+      navMenu.classList.add('open');
+      menuOverlay.classList.add('open');
+      document.body.classList.add('menu-open');
+    }
 
+    function closeMenu() {
+      navMenu.classList.remove('open');
+      menuOverlay.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
+
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // Optional: Close menu when clicking outside (for mobile)
+    window.addEventListener('click', function(event) {
+      if (
+        navMenu.classList.contains('open') &&
+        !event.target.closest('.hamburger') &&
+        !event.target.closest('.nav-menu')
+      ) {
+        closeMenu();
+      }
+    });
   </script>
 </body>
 </html>
