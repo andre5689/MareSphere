@@ -111,12 +111,13 @@ main {
   grid-column: 2 / 3;
   width: 100%;
   align-self: center;
+  color: #406473;
 }
 
 /* Off-canvas Side Menu Styles */
 .navbar {
   position: relative;
-  background: hsla(65, 73%, 33%, 1);
+  background: #A3B7BF;
   padding: 0.5em 1em;
   display: flex;
   align-items: center;
@@ -141,7 +142,7 @@ main {
   height: 100vh;
   width: 5cm; /* ~189px */
   max-width: 90vw;
-  background: hsla(65, 73%, 66%, 1);;
+  background: #F2E6D8;
   list-style: none;
   margin: 0;
   padding: 80px 0 0 0; /* space for hamburger */
