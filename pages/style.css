@@ -140,7 +140,7 @@ main {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 5cm; /* ~189px */
+  width: 6cm; /* ~189px */
   max-width: 90vw;
   background: #F2E6D8;
   list-style: none;
@@ -152,6 +152,7 @@ main {
   transform: translateX(-110%);
   transition: transform 0.3s cubic-bezier(.77,0,.18,1);
   display: block;
+  color: hsla(245, 73%, 33%, 1);
 }
 
 .nav-menu.open {
