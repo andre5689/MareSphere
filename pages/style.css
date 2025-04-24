@@ -15,8 +15,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, strong {
-  color: #231892;
+h1, strong {
+  color: hsla(0, 0%, 100%, 1);
+}
+
+h2, h3, {
+  color: hsla(245, 73%, 33%, 1;
 }
 
 h1 {
