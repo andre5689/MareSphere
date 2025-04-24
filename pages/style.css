@@ -89,6 +89,7 @@ main {
 .logo {
   max-width: 250px;
   height: auto;
+  z-index: 10;
 }
 
 /* Navigation Styles */
