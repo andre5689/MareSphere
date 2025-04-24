@@ -116,7 +116,7 @@ main {
 /* Off-canvas Side Menu Styles */
 .navbar {
   position: relative;
-  background: hsla(220, 40%, 60%, 1);
+  background: hsla(65, 73%, 33%, 1);
   padding: 0.5em 1em;
   display: flex;
   align-items: center;
