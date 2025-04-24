@@ -80,7 +80,12 @@ h2, h3 {
   margin-bottom: 20px;
 }
 
-.banner-text h1,
+.banner-text h1 {
+  display: flex; 
+  flex-direction: rows; 
+  align-items: left;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.7);
 .banner-text p {
   margin: 0 0 10px 0;
   text-shadow: 0 2px 8px rgba(255,255,255,0.7);
