@@ -20,47 +20,17 @@ h1, h2, h3, strong {
 }
 
 h1 {
-  margin: 10px 0 0 10px;
+  margin: 0 0 0 0;
   font-size: 2em;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 
 h2, h3 {
   text-align: center;
 }
 
-/* Layout */
-main {
-  display: grid; 
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.anchor, .text-container {
-  margin: 50px;
-  padding: 50px;
-}
-
-.anchor {
-  grid-column: 1 / 2;
-  max-width: 100%;
-  height: 500px;
-  object-fit: contain;
-  justify-self: center;
-  align-self: center;
-}
-
-.text-container {
-  grid-column: 2 / 3;
-  width: 100%;
-  align-self: center;
-}
-
-/* Header Styles */
+/* Banner Styles */
 .header-container {
   width: 100%;
   height: 300px;
@@ -111,26 +81,36 @@ main {
   margin: 0 0 10px 0;
   color: #231892;
   text-shadow: 0 2px 8px rgba(255,255,255,0.7);
-  /* Optional: adds contrast against the background */
 }
 
-@media screen and (max-width: 768px) {
-  .banner {
-    min-height: 300px;
-  }
-  .banner-content {
-    max-width: 90%;
-  }
-  .logo {
-    max-width: 150px;
-  }
+/* Layout */
+main {
+  display: grid; 
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.logo-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.anchor, .text-container {
+  margin: 50px;
+  padding: 50px;
+}
+
+.anchor {
+  grid-column: 1 / 2;
+  max-width: 100%;
+  height: 500px;
+  object-fit: contain;
+  justify-self: center;
+  align-self: center;
+}
+
+.text-container {
+  grid-column: 2 / 3;
+  width: 100%;
+  align-self: center;
 }
 
 /* Navigation Styles */
@@ -150,7 +130,7 @@ main {
   cursor: pointer;
   z-index: 1010;
   position: relative;
-  display: block; /* Always visible */
+  display: block;
 }
 
 /* Dropdown Menu: hidden by default, shown with .open */
@@ -212,6 +192,18 @@ main {
 }
 
 /* Responsive Adjustments */
+@media screen and (max-width: 900px) {
+  .banner {
+    min-height: 350px;
+  }
+  .banner-content {
+    max-width: 90%;
+  }
+  .logo {
+    max-width: 150px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   main {
     grid-template-columns: 1fr;
@@ -223,26 +215,22 @@ main {
     max-width: 50%;
     margin: 0 auto;
   }
-  /* The nav-menu dropdown will already overlay content, so no changes needed */
+  .banner {
+    min-height: 250px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .header-container {
     height: 200px;
   }
-  .logo-container {
-    padding: 10px 0;
+  .banner {
+    min-height: 180px;
   }
-  .banner-nav {
-    width: 100%;
-    text-align: center;
+  .banner-content {
+    max-width: 98%;
   }
-  .banner-nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  .banner-nav li {
-    margin-right: 0;
-    margin-bottom: 10px;
+  .logo {
+    max-width: 100px;
   }
 }
