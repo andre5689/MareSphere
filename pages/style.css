@@ -152,7 +152,6 @@ main {
   transform: translateX(-110%);
   transition: transform 0.3s cubic-bezier(.77,0,.18,1);
   display: block;
-  color: #406473;
 }
 
 .nav-menu.open {
@@ -166,7 +165,7 @@ main {
 
 .nav-menu li a {
   display: block;
-  color: #fff;
+  color: #406473;
   padding: 1em 2em;
   text-decoration: none;
   font-size: 1.1em;
