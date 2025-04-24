@@ -15,7 +15,11 @@ background-color: #f5fcff;
 }
 
 /* Typography */
-h1, h2, h3, strong {
+h1, strong {
+  color: #fff;
+}
+
+h2, h3, {
 color: #231892;
 }
 
