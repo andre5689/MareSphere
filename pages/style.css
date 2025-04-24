@@ -149,7 +149,7 @@ main {
   margin: 0;
   padding: 80px 0 0 0; /* space for hamburger */
   box-shadow: 2px 0 16px rgba(0,0,0,0.2);
-  z-index: 3000;
+  z-index: 4000;
   border-radius: 0 8px 8px 0;
   transform: translateX(-110%);
   transition: transform 0.3s cubic-bezier(.77,0,.18,1);
