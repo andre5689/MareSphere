@@ -65,23 +65,28 @@
   </footer>
   <script>
     function toggleMenu() {
-      var menu = document.getElementById('nav-menu');
-      if (menu) {
-        menu.classList.toggle('open');
-      }
-    }
-    window.addEventListener('click', function(event) {
-      var menu = document.getElementById('nav-menu');
-      var hamburger = document.querySelector('.hamburger');
-      if (
-        menu &&
-        menu.classList.contains('open') &&
-        !event.target.closest('.hamburger') &&
-        !event.target.closest('.nav-menu')
-      ) {
-        menu.classList.remove('open');
-      }
-    });
+  var menu = document.getElementById('nav-menu');
+  if (menu) {
+    menu.classList.toggle('open');
+    document.body.classList.toggle('menu-open', menu.classList.contains('open'));
+  }
+}
+
+// Optional: Close menu when clicking outside (for mobile)
+window.addEventListener('click', function(event) {
+  var menu = document.getElementById('nav-menu');
+  var hamburger = document.querySelector('.hamburger');
+  if (
+    menu &&
+    menu.classList.contains('open') &&
+    !event.target.closest('.hamburger') &&
+    !event.target.closest('.nav-menu')
+  ) {
+    menu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+});
+
   </script>
 </body>
 </html>
