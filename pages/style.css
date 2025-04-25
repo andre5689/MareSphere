@@ -185,7 +185,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   background: #A3B7BF;
-  color: #406473;
+  color: #0B0B45;
   justify-content: space-between;
   padding: 20px;
   opacity: 0.9;
@@ -203,7 +203,7 @@ main {
 }
 
 .footer ul li a {
-  color: #406473;
+  color: #0B0B45;
 }
 
 /* Responsive Adjustments */
