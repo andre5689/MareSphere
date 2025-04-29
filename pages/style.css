@@ -184,8 +184,8 @@ main {
 .footer {
   display: flex;
   flex-wrap: wrap;
-  background: #A3B7BF;
-  color: #0B0B45;
+  background: #34474F;
+  color: #F2E6D8;
   justify-content: space-between;
   padding: 20px;
   opacity: 0.9;
@@ -203,7 +203,7 @@ main {
 }
 
 .footer ul li a {
-  color: #0B0B45;
+  color: #F2E6D8;
 }
 
 /* Responsive Adjustments */
