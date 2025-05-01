@@ -75,6 +75,7 @@ h2, h3 {
 .logo {
   max-width: 500px;
   height: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
